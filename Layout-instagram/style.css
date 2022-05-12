@@ -80,6 +80,12 @@ body{
     border-radius: 5px;
     color: #fff;
     padding: 8px;
+    transition: all .5s;
+}
+
+.insta-login:hover{
+    transition: all .5s;
+    background: #0F2027;
 }
 
 .insta-logout{
