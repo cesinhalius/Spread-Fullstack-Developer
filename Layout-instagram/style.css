@@ -1,12 +1,12 @@
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
 }
 
 body{
-    background: white;
+    background: whitesmoke;
     display: flex;
     justify-content: center;
     margin: 0;
@@ -24,8 +24,8 @@ body{
 }
 
 .insta-phone{
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     width: 50%;
 }
@@ -35,23 +35,24 @@ body{
 }
 
 .insta-continue{
-    display: flex;
     align-items: center;
-    justify-content: space-around;
+    display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: space-around;
     min-height: 34rem;
+    width: 50%;
 }
 
 .group{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
     background-color: white;
-    width: 100%;
-    padding: 1.3rem 0;
     border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.3rem 0;
+    width: 100%;
 }
 
 .group:nth-child(1){
@@ -63,11 +64,11 @@ body{
 }
 
 .profile-photo{
+    align-items: center;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
-    border-radius: 50%;
 }
 
 .profile-photo img{
@@ -76,9 +77,9 @@ body{
 
 .insta-login{
     background: #0095f6;
+    border-radius: 5px;
     color: #fff;
     padding: 8px;
-    border-radius: 5px;
 }
 
 .insta-logout{
@@ -95,12 +96,12 @@ body{
 }
 
 .get-app{
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
     padding: 1.3rem 0;
+    width: 100%;
 }
 
 .download{
