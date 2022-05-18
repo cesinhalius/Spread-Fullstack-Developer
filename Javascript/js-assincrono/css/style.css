@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: beige;
+}
+
+img{
+    max-width: 600px;
+    border-radius: 30px;
+}
+
+main{
+    text-align: center;
+}
+
+button{
+    border: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 16px;
+    background: orangered;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all .5 ease-in-out;
+}
+
+
+button:hover{
+    background: orange;
+}
