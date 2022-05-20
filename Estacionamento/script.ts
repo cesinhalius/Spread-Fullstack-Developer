@@ -38,12 +38,9 @@ interface Veiculo {
       $("#patio")?.appendChild(row);
 
       if (salva) salvar([...ler(), veiculo]);
-      console.log(veiculo.nome, veiculo.placa)
     }
-    function remover(placa: string) {
-      const {entrada, nome } = ler().find(
-        (veiculo) => veiculo.placa === placa
-      );
+    function remover(placa: string){
+      const {entrada, nome } = ler().find(veiculo => veiculo.placa === placa); 
 
       const tempo = calcTempo(
         new Date().getTime() - new Date(entrada).getTime()
