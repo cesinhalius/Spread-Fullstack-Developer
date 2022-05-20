@@ -30,7 +30,7 @@
             console.log(veiculo.nome, veiculo.placa);
         }
         function remover(placa) {
-            const { entrada, nome } = ler().find((veiculo) => veiculo.placa === placa);
+            const { entrada, nome } = ler().find(veiculo => veiculo.placa === placa);
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
             if (confirm(`O veiculo ${nome} permaneceu por ${tempo}.Desaeja confirmar?`))
                 return;
