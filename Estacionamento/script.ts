@@ -20,6 +20,10 @@ interface Veiculo {
       return localStorage.patio ? JSON.parse(localStorage.patio) : [];
     }
 
+    function salvar(veiculos: Veiculo[]) {
+      localStorage.setItem("patio", JSON.stringify(veiculos));
+    }
+
     function adicionar(veiculo: Veiculo, salva?: boolean) {
       const row = document.createElement("tr");
 
@@ -28,35 +32,34 @@ interface Veiculo {
             <td>${veiculo.placa}</td>
             <td>${veiculo.entrada}</td>
             <td>
-            <button class="delete" data-placa"${veiculo.placa}"></button>
+            <button class="delete" data-placa"${veiculo.placa}">X</button>
             </td>
             `;
 
       row.querySelector(".delete")?.addEventListener("click", function () {
         remover(this.dataset.placa);
       });
+
       $("#patio")?.appendChild(row);
 
       if (salva) salvar([...ler(), veiculo]);
+      
     }
     function remover(placa: string){
-      const {entrada, nome } = ler().find(veiculo => veiculo.placa === placa); 
+      const { entrada, nome} = ler().find(veiculo => veiculo.placa === placa); 
 
       const tempo = calcTempo(
         new Date().getTime() - new Date(entrada).getTime()
       );
 
       if (
-        confirm(`O veiculo ${nome} permaneceu por ${tempo}.Desaeja confirmar?`)
-      )
-        return;
+        confirm(`O veiculo ${nome} permaneceu por ${tempo}.Deseja confirmar?`)
+      )return;
 
       salvar(ler().filter((veiculo) => veiculo.placa !== placa));
       render();
     }
-    function salvar(veiculos: Veiculo[]) {
-      localStorage.setItem("patio", JSON.stringify(veiculos));
-    }
+    
     function render() {
       $("#patio")!.innerHTML = "";
       const patio = ler();
