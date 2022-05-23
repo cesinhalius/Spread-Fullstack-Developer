@@ -10,6 +10,9 @@
         function ler() {
             return localStorage.patio ? JSON.parse(localStorage.patio) : [];
         }
+        function salvar(veiculos) {
+            localStorage.setItem("patio", JSON.stringify(veiculos));
+        }
         function adicionar(veiculo, salva) {
             var _a, _b;
             const row = document.createElement("tr");
@@ -18,7 +21,7 @@
             <td>${veiculo.placa}</td>
             <td>${veiculo.entrada}</td>
             <td>
-            <button class="delete" data-placa"${veiculo.placa}"></button>
+            <button class="delete" data-placa"${veiculo.placa}">X</button>
             </td>
             `;
             (_a = row.querySelector(".delete")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function () {
@@ -27,18 +30,14 @@
             (_b = $("#patio")) === null || _b === void 0 ? void 0 : _b.appendChild(row);
             if (salva)
                 salvar([...ler(), veiculo]);
-            console.log(veiculo.nome, veiculo.placa);
         }
         function remover(placa) {
             const { entrada, nome } = ler().find(veiculo => veiculo.placa === placa);
             const tempo = calcTempo(new Date().getTime() - new Date(entrada).getTime());
-            if (confirm(`O veiculo ${nome} permaneceu por ${tempo}.Desaeja confirmar?`))
+            if (confirm(`O veiculo ${nome} permaneceu por ${tempo}.Deseja confirmar?`))
                 return;
             salvar(ler().filter((veiculo) => veiculo.placa !== placa));
             render();
-        }
-        function salvar(veiculos) {
-            localStorage.setItem("patio", JSON.stringify(veiculos));
         }
         function render() {
             $("#patio").innerHTML = "";
