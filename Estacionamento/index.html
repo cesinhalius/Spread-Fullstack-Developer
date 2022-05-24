@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento</title>
+</head>
+<body>
+    <section class="form">
+        <div class="container-input">
+            <label for="placa">modelo</label>
+            <input
+                type="text"
+                id="nome"
+                placeholder="Corsa"
+                autocomplete="off"
+            />
+        </div>
+        <div class="container-input">
+            <label for="placa">Placa</label>
+            <input
+                class="input-placa"
+                type="text"
+                id="placa"
+                placeholder="BRA1E23"
+                autocomplete="off"
+                maxlength="7"
+            />
+        </div>
+        <div class="submit"><button id="cadastrar">Cadastrar</button></div>
+    </section>
+    <section class="contain-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Entrada</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="patio"></tbody>
+        </table>
+    </section>
+</body>
+</html>
